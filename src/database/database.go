@@ -2,18 +2,18 @@ package database
 
 import (
 	"database/sql"
-	"log"
 	"os"
+
+	handlererror "github.com/Jeanpigi/go-api/src/handlerError"
 	_ "github.com/lib/pq"
 )
 
-func GetConnection() *sql.DB {
-	 connectStr := os.Getenv("CONNECTSTRING")
-	 db, err := sql.Open("postgres", connectStr)
 
-	 if err != nil {
-		 log.Fatal("Error de conección: ", err)
-	 }
+func GetConnection() *sql.DB {	
+	connectStr := os.Getenv("CONNECTSTRING")
+	db, err := sql.Open("postgres", connectStr)
 
-	 return db
+	handlererror.CheckError(err, "")
+
+	return db
 }
