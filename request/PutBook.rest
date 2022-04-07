@@ -1,7 +1,7 @@
-PUT  http://localhost:3000/api/v1/book/6 HTTP/1.1
+PUT  http://localhost:3000/api/v1/book/10 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Programación en Javascript",
-    "writer": "Aldemar de los rios"
+    "author": "Programación en Javascript",
+    "title": "Aldemar de los rios"
 }
